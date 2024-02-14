@@ -54,7 +54,7 @@ function citySubmit(event) {
 
   searchCity(searchInput.value);
 }
-function weekDays (timestamp) {
+function weekDays(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -71,10 +71,10 @@ function weeklyForecast(response) {
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
-    if (index < 5){ 
-    forecastHtml =
-      forecastHtml +
-      `
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
       <div class="forecast-day">
         <div class="forecast-date">${weekDays(day.time)}</div>
         <img src="${day.condition.icon_url}" class="forecast-icon" />

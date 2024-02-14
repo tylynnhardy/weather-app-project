@@ -23,6 +23,7 @@ h1 {
 }
 p {
   color: #393e46;
+  line-height: 25px;
 }
 .weather-info {
   display: flex;
@@ -77,6 +78,8 @@ main {
   justify-content: center;
   margin-top: 10px;
   color: #393e46;
+  color: #fd2e2e;
+  color: #2eb872;
 }
 
 .forecast-temperature {
@@ -109,5 +112,5 @@ strong {
   color: #2eb872;
 }
 .forecast-temperature-min {
-  opacity: 0.9;
+  opacity: 0.6;
 }
