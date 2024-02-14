@@ -13,26 +13,26 @@
 <body>
     <div class="container">
         <header>
-            <form class="search-form">
-                <input type="search" placeholder="Enter a city" required class="search-input"/>
-                <input type="submit" value="Search" class="search-button" />
+            <form class="search-form" id="search-form">
+                <input type="search" placeholder="Enter a city" required class="search-input" id="search-input" />
+                <input type="submit" value="Search" class="search-button" id="search-button" />
             </form>
         </header>
         <main>
-            <div class ="weather-info"> 
-            <div>
-                <h1>Anchorage</h1>
-                <p class="weather-details">
-                    Tuesday 2:10pm, partly cloudy
-                    <br />
-                    Humidity: <strong>64%</strong>, Wind: <strong>20 mph</strong>
-                </p>
-            </div>
-            <div class="current-temperature">
-                <span class="current-temperature-icon">🌤️</span> 
-                <span class="current-temperature-value">33</span>
-                <span class="current-temperature-unit">°f</span>
-            </div>
+            <div class="weather-info">
+                <div>
+                    <h1 id="current-city">Anchorage</h1>
+                    <p class="weather-details">
+                        Tuesday 2:10pm, partly cloudy
+                        <br />
+                        Humidity: <strong>64%</strong>, Wind: <strong>20 mph</strong>
+                    </p>
+                </div>
+                <div class="current-temperature">
+                    <span class="current-temperature-icon">🌤️</span>
+                    <span class="current-temperature-value">33</span>
+                    <span class="current-temperature-unit">°f</span>
+                </div>
         </main>
         <footer>
             <p> This project was coded by
