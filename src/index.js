@@ -50,7 +50,34 @@ function citySubmit(event) {
 
   searchCity(searchInput.value);
 }
+function weeklyForecast() {
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+      <div class="forecast-day">
+        <div class="forecast-date">${day}</div>
+        <div class="-forecast-icon">🌤️</div>
+        <div class="forecast-temperatures">
+          <div class="forecast-temperature">
+            <strong>20º</strong>
+          </div>
+          <div class="forecast-temperature">6º</div>
+        </div>
+      </div>
+    `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", citySubmit);
 
 searchCity("Anchorage");
+weeklyForecast();
