@@ -16,7 +16,10 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-temperature-icon" />`;
+
+  getForecast(response.data.city);
 }
+
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
@@ -37,6 +40,7 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
+
 function searchCity(city) {
   let apiKey = "8bc8b03b375bt4da35a05of0462b8403";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
@@ -50,7 +54,15 @@ function citySubmit(event) {
 
   searchCity(searchInput.value);
 }
-function weeklyForecast() {
+
+function getForecast (city) {
+  let apiKey = "8bc8b03b375bt4da35a05of0462b8403";
+  let apiUrl =
+    `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+    axios(apiUrl).then(weeklyForecast);
+}
+
+function weeklyForecast(response) {
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
 
@@ -80,4 +92,4 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", citySubmit);
 
 searchCity("Anchorage");
-weeklyForecast();
+
